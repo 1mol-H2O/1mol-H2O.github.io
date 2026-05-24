@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+	<meta charset="utf-8" />
+	<title>1MOL羟氢酸|面向异次元的开发</title>
+	<link rel="icon" type="image/svg" href="mainsite.svg" />
+</head>
+
+<body>
+	<div class="divback"></div>
+</body>
+
+
+</html>
+
+<style>
+	body {
+		height: 100vh; /*可以尝试一下去掉这行……*/
+		width: 100vw;
+		background-image: url('background.svg');
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-size: cover;
+	}
+
+	.divback {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+/*		background-color: #000000a5;*/
+		background: linear-gradient(to bottom right, #ffabdf48, #87bdff48);
+		background-size: 150% 150%;
+		animation: GradientTransition 12s ease-out infinite;
+	}
+
+	.backgroundTrans {
+		background: linear-gradient(to bottom right, #ffabdf80, #87bdff80);
+		background-size: 150% 150%;
+		animation: GradientTransition 12s ease infinite;
+	}
+
+	@keyframes GradientTransition {
+		0% {
+			background-position: 0% 0%;
+		}
+
+		25% {
+			background-position: 0% 100%;
+		}
+
+		50% {
+			background-position: 100% 0;
+		}
+
+		75% {
+			background-position: 100% 100%;
+		}
+
+		100% {
+			background-position: 0% 0%;
+		}
+	}
+</style>
