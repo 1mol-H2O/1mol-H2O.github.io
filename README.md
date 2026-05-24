@@ -1,4 +1,1 @@
-# @踏雪有痕.H(txyhjzh)
-
-
-[踏雪有痕 的GitHub.io](https://txyhjzh.github.io)
+# @[1mol氢氧酸 ($1mol$-$H_2O$)]([https://1mol-H2O.github.io](https://1mol-H2O.github.io))
