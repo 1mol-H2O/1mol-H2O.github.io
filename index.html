@@ -1,3 +1,5 @@
+<!-- 本站 HTML 语言规范以 https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core 上的内容为准 -->
+
 <!DOCTYPE html>
 <!--虽然可以省，但建议不要省-->
 
@@ -10,6 +12,7 @@
 	<!--这里面是有关网站的信息（元信息），浏览者看不到的东西（除非 Ctrl+U）-->
 
 	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="1mol氢氧酸" />
 	<meta name="description" content="开发异次元版本、或自定义的操作系统" />
 	<!--meta 功能很多
@@ -24,10 +27,14 @@
 	<link rel="icon" type="image/svg" href="mainsite.svg" />
 	<!--这个是网站的图标，格式差不多就是这样固定的，几个标签的顺序实际上是可以改变的-->
 
-	<link rel="stylesheet" href="title-char.css" />
+	<link rel="stylesheet" href="image-background/background.css" />
+	<link rel="stylesheet" href="style-css/header.css" />
+	<link rel="stylesheet" href="style-css/footer.css" />
+	<link rel="stylesheet" href="style-css/interact.css" />
+	<link rel="stylesheet" href="style-css/font.css" />
 	<!--这样的格式 stylesheet 可以用于引用 CSS 样式表-->
 
-	<script src="" defer></script>
+	<script src="resource/image/background/background.js" defer></script>
 	<!--这样的格式 script 可以用于引用 JavaScript 脚本
 		defer 将在加载完 HTML 元素后再加载，可以防止脚本访问未加载的HTML元素以至于报错
 		script 引用外部的脚本时，标签中间是没有内容的；但也可以不引用，在 script中间写入脚本
@@ -36,7 +43,6 @@
 
 <body>
 	<!--显示出来的、浏览者能看到的所有内容都在这个里面-->
-
 	<header>
 		<!--页眉-->
 
@@ -45,70 +51,33 @@
 			一些建议：h1级别的标题最好一个页面只用一次（因为那代表着总领全文）
 			标题最好不要太多，级别三个已经很多也够用了（否则会显得笨重冗余）
 		-->
+
+		<a href="search/search.html" class="header_button">搜索</a>
+		<fieldset>
+			<legend>当前播放：Constant Moderato (0.8x) - Mitsukiyo & 蔚蓝档案</legend>
+			<audio controls src="resource/audio/bgm.mp3" type="audio/mp3" autoplay loop></audio>
+			<!--这样的格式可以播放音频文件-->
+		</fieldset>	
 	</header>
-	<script src="image-background/background.js" defer></script>
+
+
 	<footer>
 		<!--页脚-->
 		<div>
-			Copyright © 2026 1mol氢氧酸 | All rights reserved.
+			Copyright © 2026.06 -
+			<span CurrentYearAndMonth>2026.07</span>
+			@1mol氢氧酸
 			<br />
-			<span>当前背景图库：共 9 张</span>
+			All rights reserved.
+			<br />
 		</div>
+		<span>当前背景图库：共 9 张</span>
 	</footer>
+
+
 </body>
 
 </html>
-
-<!--以下是 style 页面设计部分-->
-
-<style>
-	@font-face {
-		font-family: 'enFont';
-		src: local('Segoe UI');
-		font-style: italic;
-		unicode-range: U+0030-0039, U+0041-005A, U+0061-007A;
-		font-weight: 100;
-	}
-
-	@font-face {
-		font-family: 'cnFont';
-		src: local('Microsoft YaHei UI');
-		font-style: normal;
-		unicode-range: U+4E00-9FFF;
-	}
-
-	mainsite_qoute {
-		/*这个是大标题 H1 的自定义格式*/
-		font-family: 'enFont', 'cnFont', serif;
-		/*	先写 Segoe UI，它不识别中文；再写微软雅黑，它可以识别中文。
-			当遇到英文时，会显示为 Segoe UI；当遇到中文时，Segoe UI 无法为中文提供字体，则显示为的微软雅黑
-			serif/sans-serif 兼顾旧操作系统
-
-			英文>MAC中文&Linux中文>Windows中文
-		*/
-		color: #44bbffcc;
-		/*白色 with 80%透明*/
-		font-size: 96px;
-		/*设置字号*/
-		font-weight: 600;
-		/*设置加粗*/
-		font-style: italic;
-		/*设置斜体*/
-		text-align: center;
-		/*设置居中*/
-
-	}
-
-	body {
-		/*这个是 body 的自定义格式*/
-		height: 100vh;
-		/*可以尝试一下去掉这两行……*/
-		width: 100vw;
-		background-image: url('image-background/background.svg');
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-</style>
 
 <!--以下是“懒得查表”系列
 #	段落标签

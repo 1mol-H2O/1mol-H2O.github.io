@@ -1,0 +1,39 @@
+<svg
+    version="1.1"
+    baseProfile="full"
+    width="500"
+    height="500"
+    xmlns="http://www.w3.org/2000/svg">
+    <!--width
+    和 height 指定SVG的宽度和高度，单位是像素px
+        xmlns 指定SVG命名空间 
+    -->
+
+    <polyline points="0,80 80,0 120,0 0,120" fill="#40b0ff" />
+    <rect x="155" y="120" rx="5" ry="5" width="30" height="200" fill="#40b0ff" />
+    <!-- 左 -->
+    <rect x="315" y="120" rx="15" ry="15" width="30" height="200" fill="#40b0ff" />
+    <!-- 右 -->
+    <rect x="185" y="205" width="130" height="30" fill="#40b0ff" />
+    <!-- 中 -->
+
+    <!-- 文本 -->
+    <text x="90" y="90" font-family="Cascadia Code ExtraLight" font-size="20" fill="#40b0ff">Developed
+        by</text>
+    <text x="250" y="90" font-family="Segoe UI Semibold" font-size="20" font-style="italic"
+        fill="#7dc9ff">1mol-H2O.github.io</text>
+    <text x="220" y="228.5" font-falmily="微软雅黑" font-size="22" font-style="bold" fill="#ffffff">DHMO</text>
+    <text x="100" y="360" font-family="楷体" font-size="20" fill="#40b0ff">1MOL 羟氢酸</text>
+</svg>
+
+<!--stroke
+是描边，fill 是填充
+    矩形 <rect x="50" y="50" width="100" height="50" rx="10" ry="10" fill="blue" />
+    圆形 <circle cx="100" cy="100" r="50" fill="red" />
+    椭圆 <ellipse cx="100" cy="100" rx="80" ry="50" fill="green" />
+    直线 <line x1="50" y1="50" x2="150" y2="150" stroke="black" stroke-width="2" />
+    多边形 <polygon points="100,50 150,150 50,150" fill="orange" />
+    折线 <polyline points="100,50 150,150 50,150" fill="none" stroke="blue" stroke-width="2" />
+    路径 <path d="M10 10 L90 10 L90 90 Z" fill="none" stroke="black" stroke-width="2" />
+    文本 <text x="50" y="50" font-family="Verdana" font-size="24" fill="black">Hello SVG</text>
+-->

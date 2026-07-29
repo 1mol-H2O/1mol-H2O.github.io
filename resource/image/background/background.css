@@ -1,0 +1,12 @@
+body {
+	/*这个是 body 的自定义格式*/
+	height: 100vh;
+	width: 100vw;
+	font-family: 'Mixed', serif;
+	/* background-image: url('image-background/background.svg'); */
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-color: #40b0ff;
+	background-attachment: fixed;
+}
