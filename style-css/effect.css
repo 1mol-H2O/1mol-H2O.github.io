@@ -18,6 +18,10 @@ LinkText[class*="QQ" i] {
     QQ: 1243685450
 }
 
+.LinkIcon {
+    width: 30px;
+    height: 30px;
+}
 .LinkIcon:hover {
     animation: LinkIconEnlarge 0.2s linear;
 }
