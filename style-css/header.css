@@ -1,4 +1,4 @@
-mainsite_qoute {
+mainsiteTitle {
 	/*这个是大标题 H1 的自定义格式*/
 	font-family: 'Segoe UI Semibold', '微软雅黑', serif;
 	/*	先写 Segoe UI，它不识别中文；再写微软雅黑，它可以识别中文。

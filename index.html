@@ -24,14 +24,15 @@
 	<title>1MOL羟氢酸</title>
 	<!--这个是网站的标题，就是导航栏加载出来的那行文字-->
 
-	<link rel="icon" type="image/svg" href="mainsite.svg" />
+	<link rel="icon" type="image/svg" href="resource/icon/mainsite.svg" />
 	<!--这个是网站的图标，格式差不多就是这样固定的，几个标签的顺序实际上是可以改变的-->
 
-	<link rel="stylesheet" href="image-background/background.css" />
+	<link rel="stylesheet" href="resource/image/background/background.css" />
 	<link rel="stylesheet" href="style-css/header.css" />
 	<link rel="stylesheet" href="style-css/footer.css" />
 	<link rel="stylesheet" href="style-css/interact.css" />
-	<link rel="stylesheet" href="style-css/font.css" />
+	<!-- <link rel="stylesheet" href="style-css/font.css" /> -->
+	<link rel="stylesheet" href="style-css/effect.css" />
 	<!--这样的格式 stylesheet 可以用于引用 CSS 样式表-->
 
 	<script src="resource/image/background/background.js" defer></script>
@@ -43,35 +44,55 @@
 
 <body>
 	<!--显示出来的、浏览者能看到的所有内容都在这个里面-->
+
+	<div>
+		<!-- 覆盖全屏，随主题黑白变化 -->
+
+	</div>
+
 	<header>
 		<!--页眉-->
 
-		<mainsite_qoute href="index.html">1mol H<sub>2</sub>O</mainsite_qoute>
+		<mainsiteTitle href="index.html">1mol H<sub>2</sub>O</mainsiteTitle>
 		<!--h? 代表标题，?是 1~6 的数字，其中 1 代表最重要，6 代表最不重要
 			一些建议：h1级别的标题最好一个页面只用一次（因为那代表着总领全文）
 			标题最好不要太多，级别三个已经很多也够用了（否则会显得笨重冗余）
 		-->
 
-		<a href="search/search.html" class="header_button">搜索</a>
+
+		<a href="search/search.html" class="header_button">
+			<img class="LinkIcon" src="resource/icon/default/behavior/search.svg" alt="搜索" />
+		</a>
 		<fieldset>
-			<legend>当前播放：Constant Moderato (0.8x) - Mitsukiyo & 蔚蓝档案</legend>
+			<legend>
+				当前播放：
+				<span class="AudioName">Constant Moderato (0.8x) - Mitsukiyo & 蔚蓝档案</span>
+			</legend>
 			<audio controls src="resource/audio/bgm.mp3" type="audio/mp3" autoplay loop></audio>
 			<!--这样的格式可以播放音频文件-->
-		</fieldset>	
+		</fieldset>
 	</header>
 
 
 	<footer>
 		<!--页脚-->
 		<div>
-			Copyright © 2026.06 -
-			<span CurrentYearAndMonth>2026.07</span>
-			@1mol氢氧酸
-			<br />
-			All rights reserved.
-			<br />
+			<div>
+				Copyright (C) 2026.06 -
+				<span CurrentYearAndMonth>2026.07</span>
+				<i class="LinkText QQ">@1mol氢氧酸</i>
+				<br />
+				All rights reserved.
+				<br />
+			</div>
+			<div>
+				<a href="https://github.com/1MOL-H2O">
+					<img class="LinkIcon" src="resource/icon/default/app/github.svg" alt="github@1MOL-H2O" />
+				</a>
+				<img class="LinkIcon" src="resource/icon/default/app/mail.svg" alt="1243685450@qq.com" />
+			</div>
+			<span>当前背景图库：共 16 张</span>
 		</div>
-		<span>当前背景图库：共 9 张</span>
 	</footer>
 
 
