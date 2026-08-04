@@ -1,12 +1,8 @@
 <!-- 本站 HTML 语言规范以 https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core 上的内容为准 -->
 
 <!DOCTYPE html>
-<!--虽然可以省，但建议不要省-->
-
 <html lang="zh-cn">
-<!--html是根元素，莫得删，必须留
-	lang 用于设置网页显示的语言
--->
+<!-- lang 用于设置网页显示的语言 -->
 
 <head>
 	<!--这里面是有关网站的信息（元信息），浏览者看不到的东西（除非 Ctrl+U）-->
@@ -27,15 +23,28 @@
 	<link rel="icon" type="image/svg" href="resource/icon/mainsite.svg" />
 	<!--这个是网站的图标，格式差不多就是这样固定的，几个标签的顺序实际上是可以改变的-->
 
-	<link rel="stylesheet" href="resource/image/background/background.css" />
+	<audio src="resource/audio/bgm.mp3" type="audio/mp3" preload="metadata" loop></audio>
+	<!--这样的格式可以播放音频文件
+		preload: auto 加载整个文件
+		metadata 加载元信息，并不会加载文件
+		none 不加载，不缓存
+	-->
+
 	<link rel="stylesheet" href="style-css/header.css" />
 	<link rel="stylesheet" href="style-css/footer.css" />
 	<link rel="stylesheet" href="style-css/interact.css" />
-	<!-- <link rel="stylesheet" href="style-css/font.css" /> -->
 	<link rel="stylesheet" href="style-css/effect.css" />
+	<link rel="stylesheet" href="style-css/data.css" />
+	<link rel="stylesheet" href="style-css/background.css" />
+	<link rel="stylesheet" href="style-css/title-bar.css" />
+	<link rel="stylesheet" href="style-css/link.css" />
+	<link rel="stylesheet" href="style-css/table-sheet.css" />
 	<!--这样的格式 stylesheet 可以用于引用 CSS 样式表-->
 
-	<script src="resource/image/background/background.js" defer></script>
+	<script src="js/background.js" defer></script>
+	<script src="js/theme.js" defer></script>
+	<script src="js/time.js" defer></script>
+	<script src="js/audio.js" defer></script>
 	<!--这样的格式 script 可以用于引用 JavaScript 脚本
 		defer 将在加载完 HTML 元素后再加载，可以防止脚本访问未加载的HTML元素以至于报错
 		script 引用外部的脚本时，标签中间是没有内容的；但也可以不引用，在 script中间写入脚本
@@ -45,54 +54,96 @@
 <body>
 	<!--显示出来的、浏览者能看到的所有内容都在这个里面-->
 
-	<div>
-		<!-- 覆盖全屏，随主题黑白变化 -->
-
-	</div>
-
 	<header>
 		<!--页眉-->
-
-		<mainsiteTitle href="index.html">1mol H<sub>2</sub>O</mainsiteTitle>
-		<!--h? 代表标题，?是 1~6 的数字，其中 1 代表最重要，6 代表最不重要
-			一些建议：h1级别的标题最好一个页面只用一次（因为那代表着总领全文）
-			标题最好不要太多，级别三个已经很多也够用了（否则会显得笨重冗余）
-		-->
-
-
-		<a href="search/search.html" class="header_button">
-			<img class="LinkIcon" src="resource/icon/default/behavior/search.svg" alt="搜索" />
-		</a>
-		<fieldset>
-			<legend>
-				当前播放：
-				<span class="AudioName">Constant Moderato (0.8x) - Mitsukiyo & 蔚蓝档案</span>
-			</legend>
-			<audio controls src="resource/audio/bgm.mp3" type="audio/mp3" autoplay loop></audio>
-			<!--这样的格式可以播放音频文件-->
-		</fieldset>
+		<div class="tip-bar">
+			<!-- 提示栏 -->
+			<p>Tips: 请使用 1920x1080 的屏幕分辨率以获得最佳浏览体验~</p>
+			<p>Tips: 请使用 Edge/Google 等以 Chrome 为内核的浏览器访问本站以防显示错误</p>
+		</div>
 	</header>
 
-
-	<footer>
-		<!--页脚-->
-		<div>
-			<div>
-				Copyright (C) 2026.06 -
-				<span CurrentYearAndMonth>2026.07</span>
-				<i class="LinkText QQ">@1mol氢氧酸</i>
-				<br />
-				All rights reserved.
-				<br />
-			</div>
-			<div>
-				<a href="https://github.com/1MOL-H2O">
-					<img class="LinkIcon" src="resource/icon/default/app/github.svg" alt="GitHub" />
+	<nav>
+		<!-- 导航栏 -->
+		<ul>
+			<li>
+				<!-- 标题 -->
+				<a href="index.html">
+					<p class="Title">1mol-H<sub>2</sub>O</p>
 				</a>
-				<img class="LinkIcon" src="resource/icon/default/app/mail.svg" alt="Qmail" />
-				<img class="LinkIcon" src="resource/icon/default/app/qq.svg" alt="QQ" />
-			</div>
-			<span>当前背景图库：共 16 张</span>
+			</li>
+			<li>
+				<!-- 搜索 -->
+				<a href="search/search.html">
+					<img class="LinkIcon" src="resource/icon/default/behavior/search.svg" alt="搜索" />
+				</a>
+			</li>
+			<li>
+				<!-- 主题 -->
+				<img class="LinkIcon" src="resource/icon/default/display/light-mode.svg" alt="切换主题" />
+			</li>
+			<li>
+				<!-- 语言 -->
+				<img class="LinkIcon" src="resource/icon/default/display/language.svg" alt="切换语言" />
+			</li>
+			<li>
+				<!-- 关于 -->
+				<a herf="about.html">
+					<img class="LinkIcon" src="resource/icon/default/display/info.svg" alt="关于本站" />
+				</a>
+			</li>
+				<div class="AudioPanel">
+					<img class="AudioCover" src="resource/image/bgm-cover/Constant Moderato.jpg"
+						alt="Constant Moderato (0.8x) - Mitsukiyo & 蔚蓝档案" />
+					<!-- <img class="AudioCover" src="resource/icon/default/media/music.svg" alt="音频控制" /> -->
+					<!-- 默认封面 -->
+					<div class="AudioNameScrollBoxCover">
+						<!-- 音频名称走马灯 -->
+						<div class="AudioNameScrollBox">
+							<span class="AudioName">Constant Moderato (0.8x) - Mitsukiyo & 蔚蓝档案</span>
+						</div>
+					</div>
+					<img class="ControlIcon" src="resource/icon/default/media/last.svg" alt="上一首" />
+					<img class="ControlIcon" src="resource/icon/default/media/backward.svg" alt="快退" />
+					<img class="ControlIcon" src="resource/icon/default/media/play.svg" alt="播放" />
+					<!-- <img class="ControlIcon" src="resource/icon/default/media/pause.svg" alt="暂停" /> -->
+					<img class="ControlIcon" src="resource/icon/default/media/forward.svg" alt="快进" />
+					<img class="ControlIcon" src="resource/icon/default/media/next.svg" alt="下一首" />
+					<!-- 播放控制组件 -->
+					<img class="ControlIcon" src="resource/icon/default/media/volume-down.svg" alt="音量减" />
+					<img class="ControlIcon" src="resource/icon/default/media/volume-up.svg" alt="音量加" />
+					<img class="ControlIcon" src="resource/icon/default/media/volume-mute.svg" alt="静音" />
+					<!-- 音量控制组件 -->
+				</div>
+		</ul>
+	</nav>
+
+	<div class="bg-overlay">
+		<!-- 覆盖全屏，随主题黑白变化 -->
+		<div class="color:var(--text-color)">当前背景图库：共 16 张</div>
+	</div>
+
+
+	<footer class="FooterBox">
+		<!--页脚-->
+		<div class="ContactBox">
+			<a href="https://github.com/1MOL-H2O" class="LinkIcon">
+				<img src="resource/icon/default/app/github.svg" alt="GitHub" />
+			</a>
+			<a href="https://wx.mail.qq.com/1243685450@qq.com" class="LinkIcon">
+				<img src="resource/icon/default/app/mail.svg" alt="Email" />
+			</a>
+			<a href="tencent://message/?uin=1243685450" class="LinkIcon">
+				<img src="resource/icon/default/app/qq.svg" alt="QQ" />
+			</a>
+		</div>
+		<div class="CopyrightBox">
+			<p>Copyright (C) 2026.06 -
+				<span>2026.08</span>
+				<i class="LinkText QQ">@1mol氢氧酸</i>
+			</p>
+			<br />
+			<p>All rights reserved.</p>
 		</div>
 	</footer>
 

@@ -1,0 +1,37 @@
+/* 链接文本 */
+.LinkText {
+    font-family: 'Segoe UI', '微软雅黑', serif;
+}
+
+.LinkText:hover {
+    background-color: var(--link-text-hover-bg-color);
+    cursor: pointer;
+}
+
+.LinkText:active {
+    background-color: var(--link-text-active-bg-color);
+}
+
+.LinkText[class*="QQ" i] {}
+
+/* 链接图标 */
+.LinkIcon img {
+    width: 30px;
+    height: 30px;
+}
+
+.LinkIcon {
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    /* transition 可以设置需要过渡的内容，all 代表全部过渡 */
+}
+
+.LinkIcon:hover {
+    transform: scale(120%);
+    /* 此处为缩放120% */
+}
+
+.LinkIcon:active{
+    transform: scale(100%);
+}

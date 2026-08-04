@@ -1,4 +1,58 @@
 footer {
     font-family: 'Cascadia Code Light', 'Segoe UI', '微软雅黑', serif;
     font-size: 18px;
+    color: var(--text-color);
+    overflow: visible;
+    text-align: center;
+    line-height: 0;
+}
+
+.FooterBox {
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    height: 100px;
+    width: 100%;
+    /* background-color: var(--background-color); */
+}
+
+.ContactBox {
+    display: flex;
+    flex-direction: row;
+    /* 水平放置 */
+    justify-content: center;
+    /* 水平居中 */
+    align-items: center;
+    /* 垂直居中 */
+    gap:20px;
+    /* 元素间距 */
+
+    position: relative;
+    /* 框架样式 */
+
+    height:100%;
+    width: 30%;
+    padding: 10px;
+    /* 内边距 */
+    margin: 0;
+    /* 外边距 */
+    background-color: var(--contact-box-bg-color);
+    /* 边框 */
+}
+
+.CopyrightBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    height: 100%;
+    width: 70%;
+    padding: 10px;
+    margin: 0;
+    background-color: var(--background-color);
 }

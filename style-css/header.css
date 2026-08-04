@@ -1,20 +1,19 @@
-mainsiteTitle {
-	/*这个是大标题 H1 的自定义格式*/
-	font-family: 'Segoe UI Semibold', '微软雅黑', serif;
-	/*	先写 Segoe UI，它不识别中文；再写微软雅黑，它可以识别中文。
-		当遇到英文时，会显示为 Segoe UI；当遇到中文时，Segoe UI 无法为中文提供字体，则显示为的微软雅黑
-		serif/sans-serif 兼顾旧操作系统
+/* 提示栏 */
+.tip-bar {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
 
-		英文>MAC中文&Linux中文>Windows中文
-	*/
-	color: #44bbffcc;
-	/*白色 with 80%透明*/
-	font-size: 96px;
-	/*设置字号*/
-	font-weight: 600;
-	/*设置加粗*/
-	font-style: italic;
-	/*设置斜体*/
-	text-align: center;
-	/*设置居中*/
+	height: auto;
+	width: 100%;
+	padding: 5px;
+	margin: 0;
+	background-color: var(--bg-gradient-color-1);
+	/* border: var(--border-color) solid 3px; */
+	/* border-radius: 15px; */
+
+	color: var(--text-color);
+	line-height: 0px;
 }
