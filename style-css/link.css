@@ -24,7 +24,6 @@
     text-decoration: none;
     display: inline-block;
     border: none;
-    /* transition 可以设置需要过渡的内容，all 代表全部过渡 */
 }
 
 .LinkIcon:hover {

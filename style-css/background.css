@@ -1,7 +1,9 @@
 * {
     box-sizing: border-box !important;
     /* 使所有元素的宽度和高度包含内边距和边框 */
-    transition: all 0.15s;
+    transition: all 0.1s;
+    /* transition 可以设置需要过渡的内容，all 代表全部过渡 */
+    /* 所有动画时长 100ms */
 }
 
 body {
@@ -15,26 +17,24 @@ body {
     font-family: 'Segoe UI', '微软雅黑', serif;
     /* background-image: url('resource/image/background/background.svg'); */
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
     background-position: center;
     background-color: #40b0ff;
-    background-attachment:fixed;
+    background-attachment: fixed;
     transition: none;
     /* 你去掉这行看看壁纸会怎么样…… */
 }
 
 .bg-overlay {
     position: fixed;
-    top:0.5%;
-    left:0.5%;
+    top: 0.5%;
+    left: 0.5%;
     z-index: -1;
-
     height: 99%;
     width: 99%;
     padding: 1%;
     margin: 0;
-    /* border: var(--border-color) dotted 20px; */
     border-radius: 20px;
     background-image: linear-gradient(var(--bg-gradient-color-1), var(--bg-gradient-color-2));
-
+    pointer-events: none;
 }

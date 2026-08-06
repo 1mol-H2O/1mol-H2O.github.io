@@ -5,18 +5,15 @@ footer {
     overflow: visible;
     text-align: center;
     line-height: 0;
-}
-
-.FooterBox {
     display:flex;
     flex-direction: row;
     justify-content: center;
+    /* 自身水平居中 */
     align-items: center;
+    /* 子元素垂直居中 */
     position: relative;
-
     height: 100px;
     width: 100%;
-    /* background-color: var(--background-color); */
 }
 
 .ContactBox {
@@ -24,9 +21,10 @@ footer {
     flex-direction: row;
     /* 水平放置 */
     justify-content: center;
-    /* 水平居中 */
+    /* 自身水平居中 */
+    justify-items: center;
     align-items: center;
-    /* 垂直居中 */
+    /* 子元素垂直居中 */
     gap:20px;
     /* 元素间距 */
 

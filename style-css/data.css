@@ -1,16 +1,26 @@
 :root {
     /*.light-theme*/
-    --title-color: #ffffffaa;
+    /* 标题 */
+    --title-shadow-color: #40b0ffaa;
+    --title-box-color: #aaddff33;
+    --title-box-border-color: #44bbffaa;
+    /* 导航栏 */
+    --nav-bar-box-color: #ffffffaa;
+    --nav-bar-option-hover-color: #aaddff88;
+    --split-line-color: #dddddd;
+    /* 背景 */
     --background-color: #fafafa;
-    --text-color: #3e3e3e;
-    --border-color: #ccccccbb;
     --bg-gradient-color-1: #ffffff77;
     --bg-gradient-color-2: #ffffffff;
+    /* 通用 */
+    --text-color: #3e3e3e;
+    --border-color: #ccccccbb;
+    --shadow-color: #00000077;
+    /* 链接 */
     --link-text-hover-bg-color: #bdbdbdbb;
     --link-text-active-bg-color: #4f4f4fbb;
+    /* 页脚 */
     --contact-box-bg-color: #ddddddbb;
-    --split-line-color: #dddddd;
-    --title-bar-option-hover-color:#aaddff88;
 }
 
 .dark-theme {

@@ -1,0 +1,67 @@
+/* 导航栏 */
+nav {
+	display: grid;
+	/* 使用 grid 进行表格布局 */
+	grid-template-columns: auto 1fr auto;
+	/* 定义 grid 列轨道，此处最左侧列自动调整，紧接4个列，然后最右侧列自动调整 */
+	/* fr 代表一个列宽 */
+	grid-template-rows: 100px;
+	gap: 0.5%;
+	justify-items: center;
+	/* 使标题栏水平居中，通常情况可以使用这种方法使子元素居中 */
+	align-items: center;
+	place-content: center;
+	/* position: fixed;
+	top: 0;
+	left: 0; */
+	margin: 0.5%;
+	padding: 0;
+}
+
+nav ul {
+	display: flex;
+	/* 这里使用 flex 不用 grid，更灵活 */
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	background-color: var(--nav-bar-box-color);
+	border: var(--border-color) double 6px;
+	border-radius: 20px;
+	list-style-type: none;
+	/* 删除前缀 */
+	color: var(--text-color);
+	overflow-x: auto;
+	overflow-y: hidden;
+	/* 选项过多，予以滚动 */
+}
+
+nav li,nav a {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	/* 垂直居中 */
+	justify-content: center;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	/* 保持与父容器一致 */
+	border-right: var(--split-line-color) solid 1px;
+	text-decoration: none;
+	color: inherit;
+	/* 文本颜色与父容器一致 */
+}
+
+nav li:hover {
+	background-color: var(--nav-bar-option-hover-color);
+}
+
+nav li img {
+	height: 30px;
+}
+
+nav li:last-child {
+	border-right: none;
+	/* 最后子元素无分割线 */
+}

@@ -1,0 +1,108 @@
+/* 音频控制面板 */
+.AudioPanel {
+    display: grid;
+    grid-template-columns: 80px repeat(5, 24px);
+    grid-template-rows: repeat(3, 24px);
+    justify-items: center;
+    /* justify 还有个意思叫“使齐行；调整使全行排满；使每行排齐” */
+    align-items: center;
+    /* align 意思为对齐 */
+    place-content: center;
+    /* 整个 gird 表格水平、垂直居中 */
+    /* place-items 设置的是表格内的元素，而非表格本身！ */
+    gap: 0;
+    /* 设置了 24px 而非 fr，此处的 gap 设为 0 即可 */
+    height: 96%;
+    width: min-content;
+    padding: 5px;
+    margin: 0;
+    background-color: var(--bg-gradient-color-2);
+    border: var(--border-color) solid 3px;
+    border-radius: 20px;
+    filter: drop-shadow(0 0 3px var(--shadow-color));
+}
+
+/* 音频信息显示 */
+.AudioName {
+    display: inline-block;
+    animation: AudioNameScroll 8s linear infinite;
+    /* 歌曲名横向滚动 */
+    white-space: nowrap;
+    /* 强制禁止换行 */
+    font-family: 'Segoe UI', '微软雅黑', serif;
+    text-decoration: none;
+}
+
+.AudioName:hover {
+    cursor: pointer;
+    background-color: var(--link-text-hover-bg-color);
+}
+
+.AudioNameScrollBox {
+    justify-self: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    /* 超出的部分隐藏 */
+    white-space: nowrap;
+    /* 不换行 */
+}
+
+.AudioNameScrollBoxCover {
+    /* 蒙版 */
+    grid-column: span 5;
+    grid-row: span 1;
+    width: 120px;
+    height: auto;
+    background-color: transparent;
+}
+
+@keyframes AudioNameScroll {
+
+    /* 这种格式可以设置动画 */
+    0% {
+        transform: translateX(100%);
+        /* 从右侧进入 */
+    }
+
+    100% {
+        transform: translateX(-100%);
+        /* 从左侧离开 */
+    }
+}
+
+.AudioCover {
+    /* 音频封面 */
+    height: 72px;
+    grid-column: 1;
+    grid-row: span 3;
+    border: #ffbb44 solid 2px;
+    border-radius: 15px;
+}
+
+.AudioCover:hover {
+    transform: scale(105%);
+    cursor: pointer;
+    filter: drop-shadow(0 0 1.5px var(--shadow-color));
+}
+
+.AudioCover:active {
+    transform: scale(100%);
+    filter: blur(1px);
+    /* 模糊 */
+}
+
+/* 音频控制图标 */
+.ControlIcon {
+    grid-column: span 1;
+    grid-row: span 1;
+    height: 20px;
+}
+
+.ControlIcon:hover {
+    transform: scale(120%);
+}
+
+.ControlIcon:active {
+    transform: scale(100%);
+}
