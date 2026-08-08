@@ -36,7 +36,8 @@ nav ul {
 	/* 选项过多，予以滚动 */
 }
 
-nav li,nav a {
+nav li,
+nav a {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -48,9 +49,14 @@ nav li,nav a {
 	height: 100%;
 	/* 保持与父容器一致 */
 	border-right: var(--split-line-color) solid 1px;
+}
+
+nav a {
 	text-decoration: none;
+	border: none;
 	color: inherit;
 	/* 文本颜色与父容器一致 */
+
 }
 
 nav li:hover {

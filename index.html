@@ -1,4 +1,4 @@
-<!-- 本站 HTML 语言规范以 https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core 上的内容为准 -->
+<!-- 本站 HTML、CSS、JavaScript 语言规范以 https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core 上的内容为准 -->
 
 <!DOCTYPE html>
 <html lang="zh-cn">
@@ -54,6 +54,10 @@
 
 <body>
 	<!--显示出来的、浏览者能看到的所有内容都在这个里面-->
+	<div class="bg-overlay">
+		<!-- 覆盖全屏，随主题黑白变化 -->
+		<span class="bg-info">当前背景图库：共 16 张</span>
+	</div>
 
 	<header>
 		<!--页眉-->
@@ -126,11 +130,6 @@
 			<!-- 音量控制组件 -->
 		</div>
 	</nav>
-
-	<div class="bg-overlay">
-		<!-- 覆盖全屏，随主题黑白变化 -->
-		<div class="color:var(--text-color); position:fixed; top:100%;">当前背景图库：共 16 张</div>
-	</div>
 
 
 	<footer>

@@ -37,4 +37,12 @@ body {
     border-radius: 20px;
     background-image: linear-gradient(var(--bg-gradient-color-1), var(--bg-gradient-color-2));
     pointer-events: none;
+    /* 不参与鼠标事件 */
+}
+
+.bg-info {
+    color: var(--text-color);
+    justify-self:end;
+    align-self:end;
+    
 }
