@@ -1,0 +1,3 @@
+function tipMessage(tipText,tipColor){
+    
+}

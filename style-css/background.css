@@ -15,7 +15,8 @@ body {
     padding: 0;
     /* 加入 margin 和 padding 为 0 可保证左右两侧无多于空隙 */
     font-family: 'Segoe UI', '微软雅黑', serif;
-    /* background-image: url('resource/image/background/background.svg'); */
+    /* font-size: 12px; */
+    /* 字体大小还是按浏览器默认大小来算吧 */
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -27,13 +28,13 @@ body {
 
 .bg-overlay {
     position: fixed;
-    top: 0.5%;
-    left: 0.5%;
+    top: 0;
+    left: 0;
     z-index: -1;
-    height: 99%;
-    width: 99%;
-    padding: 1%;
-    margin: 0;
+    height: calc(100vh - 20px);
+    width: calc(100vw - 20px);
+    padding: 10px;
+    margin: 10px;
     border-radius: 20px;
     background-image: linear-gradient(var(--bg-gradient-color-1), var(--bg-gradient-color-2));
     pointer-events: none;
@@ -42,7 +43,7 @@ body {
 
 .bg-info {
     color: var(--text-color);
-    justify-self:end;
-    align-self:end;
-    
+    justify-self: end;
+    align-self: end;
+
 }

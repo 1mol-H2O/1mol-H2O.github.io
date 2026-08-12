@@ -25,36 +25,71 @@
 /* 音频信息显示 */
 .AudioName {
     display: inline-block;
-    animation: AudioNameScroll 8s linear infinite;
+    animation: AudioNameScroll linear infinite;
     /* 歌曲名横向滚动 */
     white-space: nowrap;
     /* 强制禁止换行 */
     font-family: 'Segoe UI', '微软雅黑', serif;
+    font-size: 16px;
     text-decoration: none;
+    text-align: center;
 }
 
 .AudioName:hover {
     cursor: pointer;
     background-color: var(--link-text-hover-bg-color);
+    animation-play-state: paused;
 }
 
 .AudioNameScrollBox {
-    justify-self: center;
+    grid-column: span 5;
+    grid-row: span 1;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* 让蒙版相对于 Box 定位 */
     width: 100%;
+    /* 因为是 span 5，所以可以使用 100% */
     height: 100%;
     overflow: hidden;
     /* 超出的部分隐藏 */
     white-space: nowrap;
     /* 不换行 */
+    background-color: transparent;
 }
 
 .AudioNameScrollBoxCover {
     /* 蒙版 */
-    grid-column: span 5;
-    grid-row: span 1;
-    width: 120px;
-    height: auto;
+    justify-self: center;
+    align-self: center;
+    position: absolute;
+    /* 绝对定位 */
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: calc(100% - 40px);
     background-color: transparent;
+}
+
+.AudioNameScrollBoxCover::before,
+.AudioNameScrollBoxCover::after {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 20px;
+    pointer-events: none;
+}
+
+.AudioNameScrollBoxCover::before {
+    left: 0;
+    /* 左端对齐 */
+    background: linear-gradient(to right, var(--bg-gradient-color-2), transparent);
+}
+
+.AudioNameScrollBoxCover::after {
+    right: 0;
+    /* 右端对齐 */
+    background: linear-gradient(to left, var(--bg-gradient-color-2), transparent);
 }
 
 @keyframes AudioNameScroll {
