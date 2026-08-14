@@ -1,56 +1,18 @@
 <!-- 本站 HTML、CSS、JavaScript 语言规范以 https://developer.mozilla.org/zh-CN/docs/Learn_web_development/Core 上的内容为准 -->
-
 <!DOCTYPE html>
 <html lang="zh-cn">
 <!-- lang 用于设置网页显示的语言 -->
 
 <head>
 	<!--这里面是有关网站的信息（元信息），浏览者看不到的东西（除非 Ctrl+U）-->
-
 	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="author" content="1mol氢氧酸" />
-	<meta name="description" content="开发异次元版本、或自定义的操作系统" />
 	<!--meta 功能很多
 		charset 指定了网站编码格式是 UTF-8，它涵盖了几乎所有语言，这样大概率可以保证不会出现显示错误
 		author 代表接下来的 content 标签里是这个网页的作者
 		description 代表接下来的 content 标签里是这个网页的描述，在搜索引擎中搜索结果里会出现这段文字
 	-->
-
 	<title>1MOL羟氢酸</title>
 	<!--这个是网站的标题，就是导航栏加载出来的那行文字-->
-
-	<link rel="icon" type="image/svg" href="resource/icon/mainsite.svg" />
-	<!--这个是网站的图标，格式差不多就是这样固定的，几个标签的顺序实际上是可以改变的-->
-
-	<!-- <audio src="resource/audio/bgm.mp3" type="audio/mp3" preload="metadata" loop></audio> -->
-	<!--这样的格式可以播放音频文件
-		preload: auto 加载整个文件
-		metadata 加载元信息，并不会加载文件
-		none 不加载，不缓存
-	-->
-
-	<link rel="stylesheet" href="style-css/data.css" />
-	<link rel="stylesheet" href="style-css/background.css" />
-	<link rel="stylesheet" href="style-css/header.css" />
-	<link rel="stylesheet" href="style-css/title.css" />
-	<link rel="stylesheet" href="style-css/nav-bar.css" />
-	<link rel="stylesheet" href="style-css/audio-controlbox.css" />
-	<link rel="stylesheet" href="style-css/footer.css" />
-	<link rel="stylesheet" href="style-css/interact.css" />
-	<link rel="stylesheet" href="style-css/link.css" />
-	<link rel="stylesheet" href="style-css/table-sheet.css" />
-	<!--这样的格式 stylesheet 可以用于引用 CSS 样式表-->
-
-	<script src="js/background.js" async></script>
-	<script src="js/theme.js" async></script>
-	<script src="js/time.js" async></script>
-	<script src="js/audio.js" async></script>
-	<!--这样的格式 script 可以用于引用 JavaScript 脚本
-		defer 将在加载完 HTML 元素后再加载，可以防止脚本访问未加载的HTML元素以至于报错
-		async 异步下载，下载完成后立即执行，不会等待 HTML 元素加载完成
-		script 引用外部的脚本时，标签中间是没有内容的；但也可以不引用，在 script中间写入脚本
-	-->
 </head>
 
 <body>
@@ -58,11 +20,12 @@
 	<div id="bgOverlayPlaceHolder"></div>
 	<div id="headerPlaceHolder"></div>
 	<div id="navPlaceHolder"></div>
-
-
-
+	<main id="mainPlaceHolder" class="content-box">
+		<!-- 内容写在这里，这个框有用（提示栏），误删 -->
+	</main>
 	<div id="footerPlaceHolder"></div>
-	<script src="js/share.js"></script>
+	<script src="js/head.js" defer></script>
+	<script src="js/body.js" defer></script>
 </body>
 
 </html>

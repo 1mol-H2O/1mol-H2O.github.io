@@ -1,0 +1,39 @@
+/* 提示栏 */
+.tip-bar {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: auto;
+	width: 100%;
+	padding: 10px;
+	margin: 0;
+	background-color:transparent;
+}
+
+.tip-bar:hover {
+	cursor: pointer;
+	background-color: var(--background-color);
+}
+
+ol.tip-content {
+	margin: 0;
+	padding: 0;
+	/* 不写默认是 auto */
+	justify-content: center;
+	align-items: center;
+	color: var(--text-color);
+	line-height: auto;
+	list-style-type: none;
+	counter-reset: section;
+	/* 计数器重置，在 ol 中定义，必不可少 */
+}
+
+ol.tip-content>li::before {
+	/* 配合 list-style-type 可以更改前缀 */
+	counter-increment: section;
+	/* 计数器增加 */
+	content: "Tip" counter(section) ":";
+	margin-right: 10px;
+}

@@ -10,27 +10,21 @@
     --split-line-color: #dddddd;
     /* 背景 */
     --background-color: #fafafa;
-    --bg-gradient-color-1: #ffffff77;
+    --bg-gradient-color-1: #ffffff44;
     --bg-gradient-color-2: #ffffffff;
+    /* 主体框 */
+    --content-box-bg-color: transparent;
+    --content-box-hover-bg-color: #33cc0022;
+    --content-box-border-color: #33cc00;
     /* 通用 */
-    --text-color: #3e3e3e;
-    --border-color: #ccccccbb;
+    --text-color: #4e4e4e;
+    --border-color: #cccccccc;
     --shadow-color: #00000077;
     /* 链接 */
     --link-text-hover-bg-color: #bdbdbdbb;
     --link-text-active-bg-color: #4f4f4fbb;
     /* 页脚 */
-    --contact-box-bg-color: #ddddddbb;
+    --contact-box-bg-color: #dddddd77;
 }
 
-.dark-theme {
-    --title-color: #1a1a1abb;
-    --background-color: #1e1e1e;
-    --text-color: #ffffff;
-    --border-color: #303030aa;
-    --bg-gradient-color-1: #00000077;
-    --bg-gradient-color-2: #000000ff;
-    --link-text-hover-bg-color: #4d4d4dbb;
-    --link-text-active-bg-color: #2e2e2ebb;
-    --contact-box-bg-color: #8f8f8fbb;
-}
+.dark-theme {}

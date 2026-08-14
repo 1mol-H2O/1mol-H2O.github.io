@@ -11,7 +11,6 @@
     /* 整个 gird 表格水平、垂直居中 */
     /* place-items 设置的是表格内的元素，而非表格本身！ */
     gap: 0;
-    /* 设置了 24px 而非 fr，此处的 gap 设为 0 即可 */
     height: 96%;
     width: min-content;
     padding: 5px;
@@ -30,9 +29,10 @@
     white-space: nowrap;
     /* 强制禁止换行 */
     font-family: 'Segoe UI', '微软雅黑', serif;
-    font-size: 16px;
+    font-size: 15px;
     text-decoration: none;
     text-align: center;
+    z-index: 20;
 }
 
 .AudioName:hover {
@@ -42,8 +42,8 @@
 }
 
 .AudioNameScrollBox {
-    grid-column: span 5;
-    grid-row: span 1;
+    grid-column: 2/span 5;
+    grid-row: 1;
     justify-content: center;
     align-items: center;
     position: relative;
@@ -58,38 +58,24 @@
     background-color: transparent;
 }
 
-.AudioNameScrollBoxCover {
-    /* 蒙版 */
-    justify-self: center;
-    align-self: center;
-    position: absolute;
-    /* 绝对定位 */
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: calc(100% - 40px);
-    background-color: transparent;
+.AudioNameScrollBoxCoverLeft {
+    /* 左蒙版 */
+    grid-column: 2;
+    grid-row: 1;
+    height: 24px;
+    width: 24px;
+    background: linear-gradient(to right, var(--background-color), transparent);
+    z-index: 21;
 }
 
-.AudioNameScrollBoxCover::before,
-.AudioNameScrollBoxCover::after {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 20px;
-    pointer-events: none;
-}
-
-.AudioNameScrollBoxCover::before {
-    left: 0;
-    /* 左端对齐 */
-    background: linear-gradient(to right, var(--bg-gradient-color-2), transparent);
-}
-
-.AudioNameScrollBoxCover::after {
-    right: 0;
-    /* 右端对齐 */
-    background: linear-gradient(to left, var(--bg-gradient-color-2), transparent);
+.AudioNameScrollBoxCoverRight {
+    /* 右蒙版 */
+    grid-column: 6;
+    grid-row: 1;
+    height: 24px;
+    width: 24px;
+    background: linear-gradient(to left, var(--background-color), transparent);
+    z-index: 21;
 }
 
 @keyframes AudioNameScroll {
@@ -116,13 +102,13 @@
 }
 
 .AudioCover:hover {
-    transform: scale(105%);
+    scale: 105%;
     cursor: pointer;
     filter: drop-shadow(0 0 1.5px var(--shadow-color));
 }
 
 .AudioCover:active {
-    transform: scale(100%);
+    scale: 100%;
     filter: blur(1px);
     /* 模糊 */
 }
@@ -135,9 +121,9 @@
 }
 
 .ControlIcon:hover {
-    transform: scale(120%);
+    scale: 115%;
 }
 
 .ControlIcon:active {
-    transform: scale(100%);
+    scale: 100%;
 }

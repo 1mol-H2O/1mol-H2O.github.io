@@ -1,20 +1,26 @@
 {
-    "infoCount": 3,
+    "count": 3,
     "info": [
         {
             "name": "Constant Moderato (0.8x)",
             "author": "Mitsukiyo & 蔚蓝档案",
-            "album": "Blue Archive Original Soundtrack Vol.1 ~Longing for the Memorable Days ~ (Personal Modified)"
+            "album": "Blue Archive Original Soundtrack Vol.1 ~Longing for the Memorable Days ~ (Personal Modified)",
+            "cover": "Constant Moderato.avif",
+            "type": "mp3"
         },
         {
             "name": "一切奇迹的起点 (双音轨1s延时)",
             "author": "蔚蓝档案",
-            "album": "《蔚蓝档案》手游官方网站 - 一切奇迹的起点 (Personal Modified)"
+            "album": "《蔚蓝档案》手游官方网站 - 一切奇迹的起点 (Personal Modified)",
+            "cover": "",
+            "type": "mp3"
         },
         {
             "name": "Aoharu (三音轨67ms延时)",
             "author": "Nor & 蔚蓝档案",
-            "album": "Blue Archive Original Soundtrack Vol.3 ～Reaching for the precious time～ (Personal Modified)"
+            "album": "Blue Archive Original Soundtrack Vol.3 ～Reaching for the precious time～ (Personal Modified)",
+            "cover": "",
+            "type": "mp3"
         }
     ]
 }

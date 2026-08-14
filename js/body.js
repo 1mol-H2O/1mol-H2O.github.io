@@ -1,7 +1,12 @@
-function share(targetUrl, targetId) {
+fillIn('public/bg-overlay.html', 'bgOverlayPlaceHolder');
+fillIn('public/header.html', 'headerPlaceHolder');
+fillIn('public/nav.html', 'navPlaceHolder');
+fillIn('public/footer.html', 'footerPlaceHolder');
+
+function fillIn(targetUrl, targetId) {
+    // 加载元素
     fetch(targetUrl)
         .then((response) => {
-            console.log(`正在加载 ${targetUrl}...`);
             if (!response.ok) {
                 // 响应失败
                 throw new Error(`${targetUrl} HTTPS响应错误：${response.status}`);
@@ -20,8 +25,3 @@ function share(targetUrl, targetId) {
             console.error(`请求网页数据失败：${error}`);
         });
 };
-
-share('share/bg-overlay.html', 'bgOverlayPlaceHolder');
-share('share/header.html', 'headerPlaceHolder');
-share('share/nav.html', 'navPlaceHolder');
-share('share/footer.html', 'footerPlaceHolder');

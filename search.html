@@ -2,46 +2,19 @@
 <html lang="zh-cn">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1mol羟氢酸|搜索</title>
-    <link rel="icon" type="image/svg" href="resource/icon/mainsite.svg" />
+    <meta charset="UTF-8" />
+    <title>1MOL羟氢酸</title>
 </head>
 
 <body>
-    <form action="search/search-submit.html" method="get">
-        <!--form 标签是表单的意思，里面可以放置各种输入框、按钮等元素
-    			但是注意：form 标签的 action 属性是提交表单时的目标地址，method 属性是提交方式，
-    			当点击 button 按钮时，页面会跳转到 action 指定的地址，并将输入框的内容以 method 指定的方式（例如?keyword=123）传送过去
-    		-->
-        <fieldset>
-            <legend>
-                在
-                <select name="range" id="search_range" required>
-                    <option value="1mol">
-						<img type="image/svg" src="resource/icon/mainsite.svg" alt="1mol羟氢酸" />
-						本站|1mol羟氢酸
-					</option>
-                    <option value="baidu">
-						<img type="image/svg" src="resource/icon/default/app/baidu.svg" alt="百度" />
-						百度|Baidu
-					</option>
-                    <option value="bing">
-						<img type="image/svg" src="resource/icon/default/app/bing.svg" alt="必应" />
-						必应|Bing
-					</option>
-                </select>
-                中搜索
-            </legend>
-            <input type="text" name="keyword" id="search_keyword" placeholder="键入关键词以在本站中搜索" required />
-            <!--type=text：这是输入框，可在其中输入内容，
-    			name=keyword：返回值存放于keyword中
-    			-->
-            <button>搜索</button>
-            <!--button 标签是按钮，点击后会提交表单form-->
-
-        </fieldset>
-    </form>
+    <div id="bgOverlayPlaceHolder"></div>
+    <div id="headerPlaceHolder"></div>
+    <div id="navPlaceHolder"></div>
+    <main id="mainPlaceHolder" class="content-box">
+    </main>
+    <div id="footerPlaceHolder"></div>
+    <script src="js/head.js" defer></script>
+    <script src="js/body.js" defer></script>
 </body>
 
 </html>

@@ -1,0 +1,97 @@
+* {
+    box-sizing: border-box !important;
+    /* 使所有元素的宽度和高度包含内边距和边框 */
+    transition: all 200ms !important;
+    /* transition 可以设置需要过渡的内容，all 代表全部过渡 */
+    /* 所有动画时长 200ms */
+}
+
+html {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+body {
+    /*这个是 body 的自定义格式*/
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0;
+    padding: 0;
+    /* 加入 margin 和 padding 为 0 可保证左右两侧无多于空隙 */
+    font-family: 'Segoe UI', '微软雅黑', serif;
+    /* font-size: 12px; */
+    /* 字体大小还是按浏览器默认大小来算吧 */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-color: #40b0ff;
+    background-attachment: fixed;
+    transition: none;
+    /* 你去掉这行看看壁纸会怎么样…… */
+    display: flex;
+    flex-direction: column;
+    /* 默认轴 */
+    overflow: hidden;
+}
+
+.bg-overlay {
+    display: flex;
+    position: fixed;
+    /* fixed 相对于窗口，不随滚动改变位置；
+        absolute 相对于父元素，随滚动改变位置 */
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    background-image: linear-gradient(var(--bg-gradient-color-1), var(--bg-gradient-color-2));
+    border-radius: 5px;
+}
+
+.bg-overlay:active {
+    scale: 95%;
+}
+
+.bg-info {
+    color: var(--text-color);
+    margin-left: auto;
+    margin-top: auto;
+    /* justify-self: flex-end; */
+    /* 父元素 flex，子元素 justify 仅支持 grid，不可用 */
+    /* align-self: flex-end; */
+    /* 代码整齐，都用 margin 也就算了吧~ */
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    /* 父元素必须是 flex 且有固定高度，所以 html 必须要写 height:100% */
+    height: auto;
+    width: 98%;
+    margin-left: 1%;
+    margin-right: 1%;
+    background-color: var(--content-box-bg-color);
+    border-color: var(--content-box-border-color);
+    border-width: 3px;
+    border-style: dashed;
+    border-radius: 15px;
+    overflow: auto;
+}
+
+.content-box:hover {
+    cursor: pointer;
+    background: var(--content-box-hover-bg-color);
+}
+
+.content-box:active {
+    scale: 98%;
+}

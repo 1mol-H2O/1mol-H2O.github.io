@@ -5,7 +5,7 @@ footer {
     overflow: visible;
     text-align: center;
     line-height: 0;
-    display:flex;
+    display: flex;
     flex-direction: row;
     justify-content: center;
     /* 自身水平居中 */
@@ -14,6 +14,8 @@ footer {
     position: relative;
     height: 100px;
     width: 100%;
+    padding: 0;
+    margin-top: 5px;
 }
 
 .ContactBox {
@@ -25,13 +27,11 @@ footer {
     justify-items: center;
     align-items: center;
     /* 子元素垂直居中 */
-    gap:20px;
+    gap: 20px;
     /* 元素间距 */
-
     position: relative;
     /* 框架样式 */
-
-    height:100%;
+    height: 100%;
     width: 30%;
     padding: 10px;
     /* 内边距 */
