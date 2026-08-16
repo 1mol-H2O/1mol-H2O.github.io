@@ -12,10 +12,20 @@
     --background-color: #fafafa;
     --bg-gradient-color-1: #ffffff44;
     --bg-gradient-color-2: #ffffffff;
+    /* 日志框 */
+    --err-box-bg-color: #ff000022;
+    --err-box-border-color: #ff0000;
+    --err-box-text-color: #aa0000;
+    --warn-box-bg-color: #ffbb4422;
+    --warn-box-border-color: #ffbb44;
+    --warn-box-text-color: #ccaa44;
+    --info-box-bg-color: #33cc0022;
+    --info-box-border-color: #33cc00;
+    --info-box-text-color: #227700;
     /* 主体框 */
     --content-box-bg-color: transparent;
-    --content-box-hover-bg-color: #33cc0022;
-    --content-box-border-color: #33cc00;
+    --content-box-hover-bg-color: #ffccdd66;
+    --content-box-border-color: #ff99bb;
     /* 通用 */
     --text-color: #4e4e4e;
     --border-color: #cccccccc;

@@ -1,0 +1,8 @@
+.tip-kit {
+    max-height: 400px;
+    max-width: 300px;
+    height: min-content;
+    width: min-content;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}

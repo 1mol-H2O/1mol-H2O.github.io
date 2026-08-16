@@ -73,9 +73,9 @@ nav li:hover {
 	cursor: pointer;
 }
 
-nav li a img {
+nav li img {
 	/* 链接内图片 */
-	height: 30px;
+	height: 20px;
 }
 
 nav li span {

@@ -1,37 +1,59 @@
-let timeAss = {
-	year: 2026,
-	month: 6,
-	day: 14,
-	hours: 0,
-	minutes: 0,
-	seconds: 0,
-	milliseconds: 0,
-	yearstr: '2026',
-	monthstr: '06',
-	daystr: '14',
-	hourstr: '00',
-	minutestr: '00',
-	secondstr: '00',
-	millisecondstr: '00',
-	getDT: function () {
-		let date = new Date();
-		year = date.getFullYear();
-		month = date.getMonth() + 1;
-		// 0 - 11 代表 1 - 12 月
-		day = date.getDate();
-		hour = date.getHours();
-		minute = date.getMinutes();
-		second = date.getSeconds();
-		millisecond = date.getMilliseconds();
-		yearstr = year.toString();
-		monthstr = ('0' + (month + 1).toString()).slice(-2);
-		daystr = ('0' + day.toString()).slice(-2);
-		hourstr = ('0' + hour.toString()).slice(-2);
-		minutestr = ('0' + minute.toString()).slice(-2);
-		secondstr = ('0' + second.toString()).slice(-2);
-		millisecondstr = ('00' + millisecond.toString()).slice(-3);
+class timeAssemble {
+	year;
+	month;
+	// 0 - 11 代表 1 - 12 月
+	day;
+	hours;
+	minutes;
+	seconds;
+	milliseconds;
+	yearStr;
+	monthStr;
+	dayStr;
+	hourStr;
+	minuteStr;
+	secondStr;
+	millisecondStr;
+	constructor(yy, mm, dd, hh, mi, ss, ms) {
+		this.year = yy;
+		this.month = mm;
+		this.day = dd;
+		this.hours = hh;
+		this.minutes = mi;
+		this.seconds = ss;
+		this.milliseconds = ms;
+		this.yearStr = yy.toString();
+		this.monthStr = ('0' + (mm + 1).toString()).slice(-2);
+		this.dayStr = ('0' + dd.toString()).slice(-2);
+		this.hourStr = ('0' + hh.toString()).slice(-2);
+		this.minuteStr = ('0' + mi.toString()).slice(-2);
+		this.secondStr = ('0' + ss.toString()).slice(-2);
+		this.millisecondStr = ('00' + ms.toString()).slice(-3);
 	}
-};
+	getDT() {
+		let date = new Date();
+		let dt = new timeAssemble(date.getFullYear(),
+			date.getMonth() + 1,
+			date.getDate(),
+			date.getHours(),
+			date.getMinutes(),
+			date.getSeconds(),
+			date.getMilliseconds());
+		return dt;
+	}
+	getUnixTime() {
+		return Date.now();
+	}
+	getFormatDate() {
+		let dat = this.getDT();
+		return dat.yearStr + '-' + dat.monthStr + '-' + dat.dayStr;
+	}
+	getFormatTime() {
+		let dat = this.getDT();
+		return dat.hourStr + ':' + dat.minuteStr + ':' + dat.secondStr;
+	}
+}
+let timeAss = new timeAssemble(2026, 6, 14, 0, 0, 0, 0);
 
 const head = document.head;
 const body = document.body;
@@ -45,11 +67,22 @@ const navPH = document.getElementById('navPlaceHolder');
 const mainPH = document.getElementById('mainPlaceHolder');
 const footPH = document.getElementById('footerPlaceHolder');
 
+async function urlFetch(url) {
+	return fetch(url)
+		.then((response) => {
+			if (!response.ok) {
+				throw new Error(`HTTP响应错误: ${response.status}`);
+				logError(`${url} 响应错误：${response.status}`);
+			}
+			logInfo(`${url} 已响应.`);
+			return response.text();
+		})
+		.catch((error) => {
+			logError(`请求 ${url} 失败：${error}`);
+		});
+}
+
 function randomInt(min, max) {
 	// 返回 [min,max] 之间的随机整数
 	return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function formatTime(seconds) {
-    
 }

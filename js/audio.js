@@ -29,7 +29,7 @@ function audioProcess(id) {
 	audio = new Audio(`resource/audio/${info.name}.${info.type}`);
 	audioEventBinder(audio);
 	// 当 new Audio() 时，需要重新绑定监听事件
-	audio.preload = 'auto';
+	audio.preload = 'metadata';
 	// auto 加载整个文件
 	// metadata 加载元信息，并不会加载文件
 	// none 不加载，不缓存
@@ -50,8 +50,17 @@ function audioProcess(id) {
 	audioCover.src = cover;
 	audio.loop = false; // 循环播放
 	audio.playbackRate = 1; // 播放速率
-	console.log(`加载完成，正在播放：${content}，时长：${audio.duration}s`);
+	logInfoUpd('logAudioProcessEvent', `加载完成：${content}`);
+
 }
+
+window.addEventListener('load', function () {
+	// 没写好的先禁用
+	audioBackward.style.opacity = 0.5;
+	audioBackward.style.pointerEvents = 'none';
+	audioForward.style.opacity = 0.5;
+	audioForward.style.pointerEvents = 'none';
+});
 
 function audioEventBinder(audio) {
 	// 重新绑定 audio 事件
@@ -64,52 +73,41 @@ function audioEventBinder(audio) {
 	audio.addEventListener('timeupdate', audioTimeUpdateE);
 }
 
-function audioLoadStartE() {
+async function audioLoadStartE() {
 	audioPlay.src = "resource/icon/default/media/play.svg";
 	audioPlay.style.opacity = 0.5;
 	audioPlay.style.pointerEvents = 'none';
-	console.log('加载音频文件...');
+	logInfoUpd('logAudioProcessEvent', '加载音频文件...');
 }
+
 function audioProgressE() {
 	if (audio.buffered.length > 0) {
 		const now = audio.buffered.end(audio.buffered.length - 1);
 		const all = audio.duration;
 		if (all > 0) {
 			const percent = (now / all) * 100;
-			console.log(`已缓冲：${percent.toFixed(2)}%`);
-			// toFixed() 精确两位小数
+			logInfoUpd('logAudioProcessEvent', `已缓冲：${now.toFixed(2)}/${all.toFixed(2)} (${percent.toFixed(2)}%)`);
+			// toFixed(2) 精确两位小数
 		}
-	} else {
-
 	}
 }
 function audioCanPlayThroughE() {
-	audioPlay.src = "resource/icon/default/media/pause.svg";
 	audioPlay.style.opacity = 1;
 	audioPlay.style.pointerEvents = 'auto';
-	console.log('播放条件允许.');
-	audio.play().catch((error) => {
-		console.warn(`播放失败：${error}，尝试重载...`);
-		audio.load(); // 加载音频
-		setTimeout(() => {
-			audio.play().catch((error) => {
-				console.error(`重载失败：${error}`);
-			});
-		}, 1000);
-	}); // 开始播放
+	logInfoUpd('logAudioPlayEvent', '播放条件允许.');
 }
 function audioPlayE() {
 	audioPlay.src = "resource/icon/default/media/pause.svg";
 	audioCover.style.filter = audioCoverDefaultFilter;
-	console.log('恢复播放.');
+	logInfoUpd('logAudioPlayEvent', '恢复播放.');
 }
 function audioPauseE() {
 	audioPlay.src = "resource/icon/default/media/play.svg";
 	audioCover.style.filter = `brightness(80%)`;
-	console.log('暂停播放.');
+	logInfoUpd('logAudioPlayEvent', '暂停播放.');
 }
 function audioEndedE() {
-	console.log('播放结束.');
+	logInfoUpd('logAudioPlayEvent', '播放结束.');
 }
 function audioTimeUpdateE() {
 
@@ -119,14 +117,23 @@ audioLast.addEventListener('click', function () {
 	audioId = (audioId + audioInfo.count - 1) % audioInfo.count;
 	audio.pause();
 	audioProcess(audioId);
-	console.log('上一首.');
+	logInfoUpd('logAudioShiftEvent', '上一首.');
 });
 audioBackward.addEventListener('click', function () {
 
 });
 audioPlay.addEventListener('click', function () {
-	if (audio.paused) audio.play(); // 暂停
-	else audio.pause(); // 播放
+	if (audio.paused) {// 暂停
+		audio.play().catch((error) => {
+			logWarn(`播放失败：${error}，尝试重载...`);
+			audio.load(); // 加载音频
+			setTimeout(() => {
+				audio.play().catch((error) => {
+					logError(`重载失败：${error}`);
+				});
+			}, 1000);
+		}); // 开始播放	
+	} else audio.pause(); // 播放
 });
 audioForward.addEventListener('click', function () {
 });
@@ -134,7 +141,7 @@ audioNext.addEventListener('click', function () {
 	audioId = (audioId + 1) % audioInfo.count;
 	audio.pause();
 	audioProcess(audioId);
-	console.log('下一首.');
+	logInfoUpd('logAudioShiftEvent', '下一首.');
 });
 audioVolUp.addEventListener('click', function () {
 

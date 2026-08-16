@@ -1,3 +1,4 @@
+// 本 .js 文件用于引入 <head>，不得引用外部文件，必须写死！
 fillIn('public/bg-overlay.html', 'bgOverlayPlaceHolder');
 fillIn('public/header.html', 'headerPlaceHolder');
 fillIn('public/nav.html', 'navPlaceHolder');

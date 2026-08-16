@@ -1,0 +1,82 @@
+#mainPlaceHolder {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5%;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    /* 父元素必须是 flex 且有固定高度，所以 html 必须要写 height:100% */
+    height: 100px;
+    /* 其实这个值写啥都可以，不知道为什么去掉 heigth 或者写成 100vh、100% 都不行：页脚的显示会混乱 */
+    /* 嗯……估计是可以演他一手 */
+    width: 99%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+}
+
+.log-box {
+    display: flex;
+    flex-direction: column;
+    gap: 1%;
+    height: 100%;
+    width: 15%;
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+    /* pointer-events: none; */
+}
+
+.err-box,
+.warn-box,
+.info-box {
+    min-height: 2%;
+    margin: 0;
+    padding: 10px;
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 10px;
+    white-space: nowrap;
+    overflow: auto;
+}
+
+.err-box,
+.warn-box,
+.info-box>p {
+    margin: 0;
+    padding: 0;
+}
+
+.err-box>p {
+    color: var(--err-box-text-color);
+}
+
+.warn-box>p {
+    color: var(--warn-box-text-color);
+}
+
+.info-box>p {
+    color: var(--info-box-text-color);
+}
+
+.info-box {
+    height: 100%;
+    background-color: var(--info-box-bg-color);
+}
+
+.err-box {
+    height: 30%;
+    background-color: var(--err-box-bg-color);
+    border-color: var(--err-box-border-color);
+}
+
+.warn-box {
+    height: 20%;
+    background-color: var(--warn-box-bg-color);
+    border-color: var(--warn-box-border-color);
+}
+
+.info-box {
+    height: 50%;
+    background-color: var(--info-box-bg-color);
+    border-color: var(--info-box-border-color);
+}

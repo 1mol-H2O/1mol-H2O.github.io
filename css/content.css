@@ -1,0 +1,19 @@
+.content-box {
+    height: 100%;
+    width: 85%;
+    background-color: var(--content-box-bg-color);
+    border-color: var(--content-box-border-color);
+    border-width: 3px;
+    border-style: dashed;
+    border-radius: 15px;
+    overflow: auto;
+}
+
+.content-box:hover {
+    cursor: pointer;
+    background: var(--content-box-hover-bg-color);
+}
+
+.content-box:active {
+    scale: 98%;
+}

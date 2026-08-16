@@ -11,13 +11,13 @@ document.addEventListener("mousemove", function (event) {
         if (footDp) {
             footPH.style.marginBottom = `-${footer.offsetHeight}px`;
             footDp = false;
-            console.log("页脚已隐藏.");
+            logInfoUpd('logFooterDisplay',"页脚已隐藏.");
         }
     } else {
         if (!footDp) {
             footPH.style.marginBottom = 0;
             footDp = true;
-            console.log("页脚已显示.");
+            logInfoUpd('logFooterDisplay',"页脚已显示.");
         }
     }
 });
