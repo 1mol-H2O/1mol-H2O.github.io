@@ -1,6 +1,6 @@
-timeAss.getDT();
+const cm = timeAss.getDT();
 const cuM = document.getElementById("currentMonth");
-cuM.innerHTML = `${timeAss.yearstr}.${timeAss.monthstr}`;
+cuM.innerHTML = `${cm.yearStr}.${cm.monthStr}`;
 // 通常来说 innerText 和 textContent 作用一致，但均不可渲染标签（例如<i></i>是直接输出）
 // innerHTML 可以渲染标签（例如<i></i>）
 // 插入用户输入的文本时必须用 textContent 或 innerText，以防 XSS 跨站脚本攻击
@@ -11,13 +11,13 @@ document.addEventListener("mousemove", function (event) {
         if (footDp) {
             footPH.style.marginBottom = `-${footer.offsetHeight}px`;
             footDp = false;
-            logInfoUpd('logFooterDisplay',"页脚已隐藏.");
+            logInfoUpd('logFooterDisplay', "页脚已隐藏.");
         }
     } else {
         if (!footDp) {
             footPH.style.marginBottom = 0;
             footDp = true;
-            logInfoUpd('logFooterDisplay',"页脚已显示.");
+            logInfoUpd('logFooterDisplay', "页脚已显示.");
         }
     }
 });

@@ -1,7 +1,6 @@
 class timeAssemble {
 	year;
 	month;
-	// 0 - 11 代表 1 - 12 月
 	day;
 	hours;
 	minutes;
@@ -23,7 +22,7 @@ class timeAssemble {
 		this.seconds = ss;
 		this.milliseconds = ms;
 		this.yearStr = yy.toString();
-		this.monthStr = ('0' + (mm + 1).toString()).slice(-2);
+		this.monthStr = ('0' + (mm).toString()).slice(-2);
 		this.dayStr = ('0' + dd.toString()).slice(-2);
 		this.hourStr = ('0' + hh.toString()).slice(-2);
 		this.minuteStr = ('0' + mi.toString()).slice(-2);
@@ -34,6 +33,7 @@ class timeAssemble {
 		let date = new Date();
 		let dt = new timeAssemble(date.getFullYear(),
 			date.getMonth() + 1,
+			// 0 - 11 代表 1 - 12 月
 			date.getDate(),
 			date.getHours(),
 			date.getMinutes(),
