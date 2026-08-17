@@ -28,14 +28,14 @@ ol.tip-content {
 	color: var(--text-color);
 	line-height: auto;
 	list-style-type: none;
-	counter-reset: section;
+	counter-reset: sect;
 	/* 计数器重置，在 ol 中定义，必不可少 */
 }
 
 ol.tip-content>li::before {
 	/* 配合 list-style-type 可以更改前缀 */
-	counter-increment: section;
+	counter-increment: sect;
 	/* 计数器增加 */
-	content: "Tip" counter(section) ":";
+	content: "Tip" counter(sect) ":";
 	margin-right: 10px;
 }

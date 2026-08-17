@@ -15,6 +15,12 @@ const audioVolUp = document.getElementById('audioVolumeUp');
 const audioVolDown = document.getElementById('audioVolumeDown');
 const audioVolMute = document.getElementById('audioVolumeMute');
 
+// 没写好的先禁用
+audioBackward.style.opacity = 0.5;
+audioBackward.style.pointerEvents = 'none';
+audioForward.style.opacity = 0.5;
+audioForward.style.pointerEvents = 'none';
+
 urlFetch('resource/audio/audioInfo.json')
 	.then((data) => {
 		audioInfo = JSON.parse(data);
@@ -54,14 +60,6 @@ function audioProcess(id) {
 
 }
 
-window.addEventListener('load', function () {
-	// 没写好的先禁用
-	audioBackward.style.opacity = 0.5;
-	audioBackward.style.pointerEvents = 'none';
-	audioForward.style.opacity = 0.5;
-	audioForward.style.pointerEvents = 'none';
-});
-
 function audioEventBinder(audio) {
 	// 重新绑定 audio 事件
 	audio.addEventListener('loadstart', audioLoadStartE);
@@ -94,16 +92,18 @@ function audioProgressE() {
 function audioCanPlayThroughE() {
 	audioPlay.style.opacity = 1;
 	audioPlay.style.pointerEvents = 'auto';
-	logInfoUpd('logAudioPlayEvent', '播放条件允许.');
+	logInfoUpd('logAudioProcessEvent', '播放条件允许.');
 }
 function audioPlayE() {
 	audioPlay.src = "resource/icon/default/media/pause.svg";
 	audioCover.style.filter = audioCoverDefaultFilter;
+	audioCover.pointerEvents = 'auto';
 	logInfoUpd('logAudioPlayEvent', '恢复播放.');
 }
 function audioPauseE() {
 	audioPlay.src = "resource/icon/default/media/play.svg";
 	audioCover.style.filter = `brightness(80%)`;
+	audioCover.pointerEvents = 'none';
 	logInfoUpd('logAudioPlayEvent', '暂停播放.');
 }
 function audioEndedE() {

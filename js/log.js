@@ -2,6 +2,8 @@ const infoBox = document.getElementById('infoBox');
 const warnBox = document.getElementById('warnBox');
 const errBox = document.getElementById('errBox');
 
+logInfo('日志记录已开启.');
+
 function logInfo(expr) {
     const log = document.createElement('p');
     log.innerHTML = `[${timeAss.getFormatTime()}] ${expr}`;

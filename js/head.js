@@ -8,7 +8,7 @@ fetch('public/head.html')
         if (!response.ok) {
             throw new Error(`HTTP响应错误: ${response.status}`);
         }
-        console.info(`$head.html 已响应.`);
+        console.info(`head.html 已响应.`);
         return response.text();
     })
     .then((data) => {

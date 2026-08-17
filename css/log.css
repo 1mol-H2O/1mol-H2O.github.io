@@ -31,19 +31,24 @@
 .info-box {
     min-height: 2%;
     margin: 0;
-    padding: 10px;
+    padding: 6px;
     border-width: 3px;
     border-style: solid;
     border-radius: 10px;
-    white-space: nowrap;
-    overflow: auto;
+    /* word-wrap: break-word; */
+    /* 强制在单词中间换行，字符和数字无效 */
+    word-break: break-all;
+    /* 强制在任意字符间换行 */
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
 .err-box,
 .warn-box,
 .info-box>p {
     margin: 0;
-    padding: 0;
+    padding-left: 1em;
+    text-indent: -1em;
 }
 
 .err-box>p {
@@ -64,19 +69,19 @@
 }
 
 .err-box {
-    height: 30%;
+    height: 20%;
     background-color: var(--err-box-bg-color);
     border-color: var(--err-box-border-color);
 }
 
 .warn-box {
-    height: 20%;
+    height: 15%;
     background-color: var(--warn-box-bg-color);
     border-color: var(--warn-box-border-color);
 }
 
 .info-box {
-    height: 50%;
+    height: 65%;
     background-color: var(--info-box-bg-color);
     border-color: var(--info-box-border-color);
 }

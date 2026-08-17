@@ -24,7 +24,7 @@
 /* 音频信息显示 */
 .AudioName {
     display: inline-block;
-    animation: TextScroll linear infinite;
+    animation: AudioNameScroll linear infinite;
     /* 歌曲名横向滚动 */
     white-space: nowrap;
     /* 强制禁止换行 */
@@ -78,7 +78,7 @@
     z-index: 21;
 }
 
-@keyframes TextScroll {
+@keyframes AudioNameScroll {
 
     /* 这种格式可以设置动画 */
     0% {
